@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+    <meta charset="UTF-8">
+    <title>Doctors Appointments</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+    <script  src='app.js'></script>
+    <script src='./controllers/users.js'></script>
+    <script src='./factories/users.js'></script>
+    <script src='./controllers/appointments.js'></script>
+     <script src='./factories/appointments.js'></script>
+    <style> 
+        table, tr,th{
+            border: 1px solid blue;
+        }
+    </style>
+
+</head>
+<body>
+   <div ng-controller="userController">  <a href="" ng-click = "logout()">Logout</a></div>
+    <div ng-view>
+    </div>
+</body>
+</html>

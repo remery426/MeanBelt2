@@ -1,0 +1,22 @@
+<div ng-controller="appointmentController">
+<p> Welcome {{current_user.name}}</p>
+<h1> Doctors Appointments </h1>
+<form action="">
+    <input type="text" ng-model= "searchKeyword">
+</form>
+<br>
+<table>
+    <tr><th>Date</th><th>Time</th><th> Patient Name </th><th> Complaint  </th></tr>
+    <tr ng-repeat="appointment  in all_appointments| filter: searchKeyword |  orderBy: 'datetime'"> 
+        <div ng-if = "appointment.datetime < current_date">
+            
+        <th>{{appointment.date |date : longDate }}</th>
+        <th>{{appointment.time | date:' h:mm a'}}</th>
+        <th>{{appointment.user.name}}</th>
+        <th>{{appointment.complaint}} <div ng-if = "current_user.name == appointment.user.name"> <button ng-click = "cancel(appointment)">Cancel</button></div></th> </tr>
+        </div>
+     </table>
+     <br>
+    <button href="#/addPage"><a href="#/addPage"> Add a new Appointment</a></button>
+    
+    </div>
